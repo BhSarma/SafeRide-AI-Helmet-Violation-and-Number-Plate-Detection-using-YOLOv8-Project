@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+helmet_plate/
+extra_data/
+merged_data/
+runs/
+results/
+data_runtime.yaml
+old_best.pt
+yolov8n.pt
+*.mp4
+!sample_results/*.mp4
+!test_samples/*.mp4
