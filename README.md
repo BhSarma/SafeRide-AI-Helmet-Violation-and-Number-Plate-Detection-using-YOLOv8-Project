@@ -12,13 +12,8 @@ The model is a **YOLOv8m** detector trained on a merged dataset of about 2,800 l
 - Flags riders without a helmet (**NO HELMET**) and shows the number plate of the violating rider
 - Works on **images**, **videos** and **camera snapshots**
 - Separate confidence sliders for riders, helmets and plates
-- Optional bicycle filter (uses a small extra YOLOv8n model) to reduce false alarms
-- Re-scan step that zooms in on a violating rider to find a missed plate
-- Video mode confirms a violation over several frames, which reduces one-frame false alarms
-- Plate evidence: the clearest plate crop of each violating rider
-- Download buttons for the annotated image and video
 
-Colour code: 🟢 helmet OK, 🔴 NO HELMET, 🟡 number plate, ⚪ still checking (video).
+Colour code: 🟢 helmet OK, 🔴 NO HELMET, 🟡 number plate.
 
 ---
 
@@ -35,7 +30,14 @@ Evaluated on a held-out **test set of 282 images (1,380 labelled objects)** that
 
 An earlier model, trained on a smaller single-source dataset, reached about 0.954 mAP50 and 0.679 mAP50-95 on its own validation set. It missed cases from other sources, so more varied data was merged and a larger model was trained. The two scores come from different data, so they are not a strict like-for-like comparison.
 
-Sample outputs are in the [`sample_results/`](sample_results/) folder.
+**Sample outputs**
+
+- Image result: [Image_detection_result.png](sample_results/Image_detection_result.png)
+- Video result: [video_sample_result.mp4](sample_results/video_sample_result.mp4)
+
+![Image detection result](sample_results/Image_detection_result.png)
+
+Video result: [Click here to watch the video](sample_results/video_sample_result.mp4)
 
 ---
 
@@ -99,7 +101,7 @@ streamlit run app.py
 ```
 The browser opens at `http://localhost:8501`. Choose **Upload image**, **Upload video** or **Camera snapshot** in the sidebar.
 
-Keep `best.pt` in the same folder as `app.py`. The bicycle filter downloads a small model (`yolov8n.pt`) automatically the first time it is used, so an internet connection is needed once.
+Keep `best.pt` in the same folder as `app.py`. The app downloads a small helper model (`yolov8n.pt`) automatically the first time it runs, so an internet connection is needed once.
 
 **Quick test without the website**
 ```
