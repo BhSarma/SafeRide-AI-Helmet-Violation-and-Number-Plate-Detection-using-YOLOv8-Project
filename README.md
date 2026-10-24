@@ -54,7 +54,7 @@ Video result: [Click here to watch the video](sample_results/video_sample_result
 
 The final dataset was built by cleaning and merging several public datasets with `prepare_data.py` (class mapping check, label cleaning and a train/valid/test split). The data itself is **not** included in this repository.
 
-**Dataset sources:** `[add the names and links of your datasets here]`
+**Dataset sources:** The images and labels were collected from public datasets on [Roboflow Universe](https://universe.roboflow.com), then cleaned, merged and re-split for this project.
 
 ---
 
